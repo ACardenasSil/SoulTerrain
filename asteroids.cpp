@@ -56,7 +56,7 @@ extern double timeDiff(struct timespec *start, struct timespec *end);
 extern void timeCopy(struct timespec *dest, struct timespec *source);
 //-----------------------------------------------------------------------------
 //emomen.cpp
-extern void drawHealthBar();
+extern void testFunc_emomen();
 //-----------------------------------------------------------------------------
 
 class Global {
@@ -320,6 +320,7 @@ int main()
 {
 	logOpen();
 	init_opengl();
+	testFunc_emomen(); // from emomen.cpp
 	srand(time(NULL));
 	clock_gettime(CLOCK_REALTIME, &timePause);
 	clock_gettime(CLOCK_REALTIME, &timeStart);
@@ -792,7 +793,6 @@ void render()
 	ggprint8b(&r, 16, 0x00ff0000, "3350 - Asteroids");
 	ggprint8b(&r, 16, 0x00ffff00, "n bullets: %i", g.nbullets);
 	ggprint8b(&r, 16, 0x00ffff00, "n asteroids: %i", g.nasteroids);
-	drawHealthBar(); //from emomen.cpp
 	//-------------------------------------------------------------------------
 	//Draw the ship
 	glColor3fv(g.ship.color);

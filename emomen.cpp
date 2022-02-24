@@ -1,8 +1,10 @@
 // File: emomen.cpp
 // Author: Evan Momen
 // Date: 2022
+#include <iostream>
 
-void drawHealthBar() {
+void testFunc_emomen() {
     //ggprint8b(&r, 16, 0x00ffff00, "HEALTH BAR HERE");
-    printf("HEALTH BAR HERE");
+    std::cout << "Game starting..." << std::endl;
+    std::cout << "Evan Momen" << std::endl;
 }
