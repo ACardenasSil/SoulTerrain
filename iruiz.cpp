@@ -3,9 +3,55 @@
 //Last modified: February 25, 2022
 
 #include <iostream>
+//#include <cstdlib>
+//#include <cstring>
+//#include <unistd.h>
+//#include <ctime>
+//#include <cmath>
+//#include <X11/Xlib.h>
 #include <X11/keysym.h>
+//#include <GL/glx.h>
+//#include "log.h"
+//#include "fonts.h"
+//extern class Ship;
+//extern class Asteroid;
+//extern class Bullet;
+//extern class Game {Ship *ship; Asteroid *ahead; Bullet *barr;} g;
 
 using namespace std;
+
+/*
+void movement(char *keys)
+{
+    extern class Ship;
+    extern class Asteroid;
+    extern class Bullet;
+    if (keys[XK_Left]) {
+        g.ship->vel[0] -= 0.05f;
+    } else {
+        if (!keys[XK_Right])
+            g.ship->vel[0] = 0.0f;
+    }
+    if (keys[XK_Right]) {
+        g.ship->vel[0] += 0.05f;
+    } else {
+        if (!keys[XK_Left])
+            g.ship->vel[0] = 0.0f;
+    }
+    if (keys[XK_Up]) {
+        g.ship->vel[1] += 0.05f;
+    } else {
+        if (!keys[XK_Down])
+            g.ship->vel[1] = 0.0f;
+    }
+    if (keys[XK_Down]) {
+        g.ship->vel[1] -= 0.05f;
+    } else {
+        if (!keys[XK_Up])
+            g.ship->vel[1] = 0.0f;
+    }
+}
+*/
 
 void test(char *keys)
 {

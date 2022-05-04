@@ -863,16 +863,33 @@ void physics()
 	//---------------------------------------------------
 	//check keys pressed now
 	if (gl.keys[XK_Left]) {
+        /*------GORDON CODE---------
 		g.ship.angle += 4.0;
 		if (g.ship.angle >= 360.0f)
 			g.ship.angle -= 360.0f;
-	}
+        ----------------------------*/
+        //-------iruiz added----------
+        g.ship.vel[0] -= 0.05f;
+	} else {
+        if (!gl.keys[XK_Right])
+            g.ship.vel[0] = 0.0f;
+    }
+    //--------------------------------
 	if (gl.keys[XK_Right]) {
+        /*------GORDON CODE--------
 		g.ship.angle -= 4.0;
 		if (g.ship.angle < 0.0f)
 			g.ship.angle += 360.0f;
-	}
+        ----------------------------*/
+        //-------iruiz added----------
+        g.ship.vel[0] +=0.05f;
+	} else {
+        if (!gl.keys[XK_Left])
+            g.ship.vel[0] = 0.0f;
+    }
+    //-------------------------------
 	if (gl.keys[XK_Up]) {
+        /*------GORDON CODE-------
 		//apply thrust
 		//convert ship angle to radians
 		Flt rad = ((g.ship.angle+90.0) / 360.0f) * PI * 2.0;
@@ -880,7 +897,10 @@ void physics()
 		Flt xdir = cos(rad);
 		Flt ydir = sin(rad);
 		g.ship.vel[0] += xdir*0.02f;
-		g.ship.vel[1] += ydir*0.02f;
+        ---------------------------*/
+        //------iruiz added----------
+		g.ship.vel[1] += 0.05f;
+        //---------------------------
 		Flt speed = sqrt(g.ship.vel[0]*g.ship.vel[0]+
 				g.ship.vel[1]*g.ship.vel[1]);
 		if (speed > 10.0f) {
@@ -889,7 +909,18 @@ void physics()
 			g.ship.vel[0] *= speed;
 			g.ship.vel[1] *= speed;
 		}
-	}
+    //--------iruiz added-----------
+	} else {
+        if (!gl.keys[XK_Down])
+            g.ship.vel[1] = 0.0f;
+    }
+    if (gl.keys[XK_Down]) {
+        g.ship.vel[1] -= 0.05f;
+    } else {
+        if (!gl.keys[XK_Up])
+            g.ship.vel[1] = 0.0f;
+    }
+    //-----------------------------
 	if (gl.keys[XK_space]) {
 		//a little time between each bullet
 		struct timespec bt;
